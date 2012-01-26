@@ -14,7 +14,7 @@ module Rack
         puts "Memory usage excedes #{@options[:max_mem]}mb limit, exiting"
         Thread.new do
           `kill -INT #{$$}`
-          skeep 10
+          sleep 10
           `kill -KILL #{$$}`
         end
       end
